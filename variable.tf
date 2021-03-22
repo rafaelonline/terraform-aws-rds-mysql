@@ -31,13 +31,6 @@ variable "db_subnet_group_name" {
   default     = ""
 }
 
-
-variable instance_identifier {
-  type        = string
-  default     = "homologacao"
-  description = "description"
-}
-
 variable "db_instance" {
   default = "db.t3.micro"
 }

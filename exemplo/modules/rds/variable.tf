@@ -20,24 +20,6 @@ variable "vpc_security_group_ids" {
 }
 
 
-/*variable vpc_name {
-  type        = string
-  default     = "VPC"
-  description = "Nome da VPC onde estara o recurso"
-}
-
-/*variable subnet_private0 {
-  type        = string
-  default     = "Subnet-private0"
-  description = "description"
-}
-
-variable subnet_private1 {
-  type        = string
-  default     = "Subnet-private1"
-  description = "description"
-}*/
-
 variable "subnets" {
   description = "List of subnet IDs to use"
   type        = list(string)
@@ -49,23 +31,9 @@ variable "db_subnet_group_name" {
   default     = ""
 }
 
-
-variable instance_identifier {
-  type        = string
-  default     = "homologacao"
-  description = "description"
-}
-
 variable "db_instance" {
   default = "db.t3.micro"
 }
-/*variable "db_name" {
-  default = "homologacao"
-}*/
-
-/*variable "key_name" {
-  default = "horen-walsh"
-}*/
 
 variable "volume_type" {
   default = "gp2"
@@ -81,12 +49,10 @@ variable volume_encrypted {
 
 variable engine {
   type = string
-  #default     = "mysql"
   description = "description"
 }
 variable engine_version {
   type = string
-  #default     = "5.7.28"
   description = "description"
 }
 variable master_username {
@@ -168,7 +134,6 @@ variable "permissions_boundary" {
 
 variable kms_key {
   type = string
-  #default     = "arn:aws:kms:us-east-1:536620048806:key/2274299d-6acb-4834-83e8-feb346fe6f7a"
   description = "description"
   default     = ""
 }

@@ -9,9 +9,7 @@ resource "aws_db_instance" "rds_mysql" {
   allocated_storage = var.volume_size
   storage_type      = var.volume_type
   multi_az          = var.multi_az
-  #db_subnet_group_name       = var.subnet_group
   db_subnet_group_name = join("", aws_db_subnet_group.rds_mysql.*.name)
-  #vpc_security_group_ids     = [var.security_group]
   vpc_security_group_ids     = compact(concat(var.security_group, var.vpc_security_group_ids))
   availability_zone          = var.availability_zone
   port                       = var.port
