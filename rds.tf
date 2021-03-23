@@ -4,7 +4,7 @@ resource "aws_db_instance" "rds_mysql" {
   engine_version    = var.engine_version
   identifier        = var.identifier_rds
   username          = var.master_username
-  password          = join("", random_password.password.*.result)
+  password          = var.password != "" ? var.password : join("", random_password.password.*.result)
   instance_class    = var.db_instance
   allocated_storage = var.volume_size
   storage_type      = var.volume_type

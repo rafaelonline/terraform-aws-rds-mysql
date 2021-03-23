@@ -1,6 +1,6 @@
  # AWS RDS-MySQL Terraform module
 
-Módulo Terraform para criar instancias de RDS-MySQL na AWS
+Módulo Terraform para criar instancias de bancos de dados RDS-MySQL na AWS
 
 ## Requisitos
 

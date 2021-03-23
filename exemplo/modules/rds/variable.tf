@@ -48,11 +48,11 @@ variable volume_encrypted {
 }
 
 variable engine {
-  type = string
+  type        = string
   description = "description"
 }
 variable engine_version {
-  type = string
+  type        = string
   description = "description"
 }
 variable master_username {
@@ -133,7 +133,7 @@ variable "permissions_boundary" {
 
 
 variable kms_key {
-  type = string
+  type        = string
   description = "description"
   default     = ""
 }

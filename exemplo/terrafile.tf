@@ -12,6 +12,8 @@ module "rds" {
   #subnets             = local.private_subnets_id
   #security_group      = [local.security_group_id]
 
+  #password = "123qwE.." # -> Caso uma senha não seja informada, será gerado uma automatica
+
   identifier_rds      = "mydatabase"
   database_name       = "base"
   engine              = "mysql"
