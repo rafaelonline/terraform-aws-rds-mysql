@@ -1,18 +1,7 @@
-/*locals {
-  private_subnets_id = data.terraform_remote_state.infra.outputs.private_subnets_id
-  security_group_id = data.terraform_remote_state.infra.outputs.security_group_id
-
-
-}*/
-
 module "rds" {
   source         = "./modules/rds"
   subnets        = ["subnet-6a482535", "subnet-9d0b6bfb"]
   security_group = ["sg-40ab664e"]
-  #subnets             = local.private_subnets_id
-  #security_group      = [local.security_group_id]
-
-  #password = "123qwE.." # -> Caso uma senha não seja informada, será gerado uma automatica
 
   identifier_rds      = "mydatabase"
   database_name       = "base"
@@ -29,6 +18,8 @@ module "rds" {
   enabled_cloudwatch_logs_exports = ["error", "slowquery", "audit"]
 
   ### TAGS ###
-  owner       = "labs"
-  environment = "dev"
+  tags = {
+    owner       = "labs"
+    environment = "dev"
+  }
 }
